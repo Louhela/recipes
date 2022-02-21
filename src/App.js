@@ -58,7 +58,7 @@ function App() {
   const [mealMeasurement19, setMealMeasurement19] = useState('')
   const [mealMeasurement20, setMealMeasurement20] = useState('')
 
-  function Lookup(){
+  function SearchByName(){
       axios.get(searchAddress)
       .then((response) => {
         console.log(response)
@@ -177,7 +177,7 @@ function App() {
     <div className="App">
         <h2>Meal of the day</h2>
         <input placeholder='Search a meal by name' type="text" value={search} onChange={e=> setSearch(e.target.value)}/>
-        <input type="button" value="Search" onClick={Lookup}/>
+        <input type="button" value="Search" onClick={SearchByName}/>
         <h1>{mealName}</h1>
         <p>{mealCategory}</p>
         <h3>Ingredients</h3>
