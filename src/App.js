@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function App() {
-
   const API = 'https://www.themealdb.com/api/json/v1/1/'
 
   const [search, setSearch] = useState('')
@@ -58,9 +57,6 @@ function App() {
   const [mealMeasurement18, setMealMeasurement18] = useState('')
   const [mealMeasurement19, setMealMeasurement19] = useState('')
   const [mealMeasurement20, setMealMeasurement20] = useState('')
-
-
-
 
   function Lookup(){
       axios.get(searchAddress)
@@ -118,7 +114,6 @@ function App() {
           console.log(error)
           alert("Could not find a meal. Try to search for a different meal");
       })
-
   }
 
   useEffect(() => {
@@ -178,43 +173,41 @@ function App() {
     })
   },[])
 
-
-
   return (
     <div className="App">
-     <h2>Meal of the day</h2>
-     <input placeholder='Search a meal by name' type="text" value={search} onChange={e=> setSearch(e.target.value)}/>
-     <input type="button" value="Search" onClick={Lookup}/>
-     <h1>{mealName}</h1>
-     <p>{mealCategory}</p>
-    <h3>Ingredients</h3>
-     <ul>
-          <li>{mealIngredient1} {mealMeasurement1}</li>
-          <li>{mealIngredient2} {mealMeasurement2}</li>
-          <li>{mealIngredient3} {mealMeasurement3}</li>
-          <li>{mealIngredient4} {mealMeasurement4}</li>
-          <li>{mealIngredient5} {mealMeasurement5}</li>
-          <li>{mealIngredient6} {mealMeasurement6}</li>
-          <li>{mealIngredient7} {mealMeasurement7}</li>
-          <li>{mealIngredient8} {mealMeasurement8}</li>
-          <li>{mealIngredient9} {mealMeasurement9}</li>
-          <li>{mealIngredient10} {mealMeasurement10}</li>
-          <li>{mealIngredient11} {mealMeasurement11}</li>
-          <li>{mealIngredient12} {mealMeasurement12}</li>
-          <li>{mealIngredient13} {mealMeasurement13}</li>
-          <li>{mealIngredient14} {mealMeasurement14}</li>
-          <li>{mealIngredient15} {mealMeasurement15}</li>
-          <li>{mealIngredient16} {mealMeasurement16}</li>
-          <li>{mealIngredient17} {mealMeasurement17}</li>
-          <li>{mealIngredient18} {mealMeasurement18}</li>
-          <li>{mealIngredient19} {mealMeasurement19}</li>
-          <li>{mealIngredient20} {mealMeasurement20}</li>
-     </ul>
-     <img src={mealImage} alt="" />
-     <h3>Instructions</h3>
-     <p>{mealInstructions}</p>
-     <p>Recipe source: <a href={mealSource}>{mealSource}</a></p>
-     <p><a href={mealYoutube}>Link to YouTube recipe</a></p>
+        <h2>Meal of the day</h2>
+        <input placeholder='Search a meal by name' type="text" value={search} onChange={e=> setSearch(e.target.value)}/>
+        <input type="button" value="Search" onClick={Lookup}/>
+        <h1>{mealName}</h1>
+        <p>{mealCategory}</p>
+        <h3>Ingredients</h3>
+      <ul>
+        <li>{mealIngredient1} {mealMeasurement1}</li>
+        <li>{mealIngredient2} {mealMeasurement2}</li>
+        <li>{mealIngredient3} {mealMeasurement3}</li>
+        <li>{mealIngredient4} {mealMeasurement4}</li>
+        <li>{mealIngredient5} {mealMeasurement5}</li>
+        <li>{mealIngredient6} {mealMeasurement6}</li>
+        <li>{mealIngredient7} {mealMeasurement7}</li>
+        <li>{mealIngredient8} {mealMeasurement8}</li>
+        <li>{mealIngredient9} {mealMeasurement9}</li>
+        <li>{mealIngredient10} {mealMeasurement10}</li>
+        <li>{mealIngredient11} {mealMeasurement11}</li>
+        <li>{mealIngredient12} {mealMeasurement12}</li>
+        <li>{mealIngredient13} {mealMeasurement13}</li>
+        <li>{mealIngredient14} {mealMeasurement14}</li>
+        <li>{mealIngredient15} {mealMeasurement15}</li>
+        <li>{mealIngredient16} {mealMeasurement16}</li>
+        <li>{mealIngredient17} {mealMeasurement17}</li>
+        <li>{mealIngredient18} {mealMeasurement18}</li>
+        <li>{mealIngredient19} {mealMeasurement19}</li>
+        <li>{mealIngredient20} {mealMeasurement20}</li>
+      </ul>
+        <img src={mealImage} alt="" />
+        <h3>Instructions</h3>
+        <p>{mealInstructions}</p>
+        <p>Recipe source: <a href={mealSource}>{mealSource}</a></p>
+        <p><a href={mealYoutube}>Link to YouTube recipe</a></p>
     </div>
   );
 }
